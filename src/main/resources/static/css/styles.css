@@ -96,4 +96,8 @@ body {
     .hero-image {
         height: auto;
     }
+
+    .main-heading{
+        padding-left: 0px;
+    }
 }
