@@ -79,21 +79,4 @@ body {
     height: auto;
     opacity: 1;
     transition: opacity 1s ease-in-out;
-}/*this is sick*/
-
-/* Media Queries for Responsive Design */
-@media only screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        height: 70px;
-    }
-
-    .container .navbar ul li {
-        margin: 10px 0;
-    }
-
-    .hero-image {
-        height: auto;
-    }
 }
