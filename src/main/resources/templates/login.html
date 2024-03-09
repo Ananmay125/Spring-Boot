@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dose of Memes - login</title>
+    <link rel="icon" type="x/icon" href="/images/sanic.png">
+    <script src="/main.js"></script>
+    <style>
+        .error-message{
+            text-align: center;
+        }
+        
+        #login-button{
+            width: 205px;
+            margin-top: 10px;
+            border-radius: 7px;
+            height: 35px;
+            font-family: 'Trebuchet MS', serif;
+            color:black;
+            background: #ffdc64;
+            cursor: pointer;
+        }
+
+        #login-button:hover {
+            background: red;
+            color: white;
+        }
+
+        #password{
+            width: 200px;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+            background:#181c1c;
+            border-left: 0px;
+            border-right:0px;
+            border-top:0px;
+            padding-left: 5px;
+        }
+
+        #username{
+            width: 200px;
+            border-radius: 5px;
+            height: 25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            background:#181c1c;
+            border-left: 0px;
+            border-right:0px;
+            border-top:0px;
+            padding-left: 5px;
+        }
+
+        body {
+            background-image: url("/images/nyan-cat.jpg");
+            background-size:cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        * {
+            color: white;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', serif;
+        }
+        h1 {
+            font-size: 35px;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .main-heading-div {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .form-div{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+
+    <div class="main-heading-div">
+        <h1>Daily Dose of Memes</h1>
+    </div>
+
+    <!-- Display an error message if authentication fails -->
+    <p class="error-message" th:if="${param.error}" style="color: red;">Invalid username or password</p>
+
+    <div class="form-div">
+        <form th:action="@{/login}" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <button id="login-button" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
